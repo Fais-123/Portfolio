@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Faisal Haroon - Data Analyst specializing in Python, SQL, and data visualization. Transforming raw data into actionable business insights.">
+    <meta name="keywords" content="Data Analyst, Python, SQL, Data Visualization, Karachi, Pakistan, Business Intelligence, Analytics">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Faisal Haroon - Data Analyst Portfolio">
+    <meta property="og:description" content="Professional Data Analyst specializing in Python, SQL, and data visualization tools to transform raw data into actionable insights.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    
+    <title>Faisal Haroon - Data Analyst Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Faisal Haroon",
+        "jobTitle": "Data Analyst",
+        "email": "faisalharoon1994@gmail.com",
+        "telephone": "+92 3402643961",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Karachi",
+            "addressCountry": "Pakistan"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/faisal-haroon-b4ba9b1b6/",
+            "https://github.com/Fais-123"
+        ]
+    }
+    </script>
+
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Color Palette */
+            --primary-dark: #1f3a93;
+            --primary-blue: #2c3e50;
+            --accent-blue: #3498db;
+            --light-gray: #f4f6f9;
+            --lighter-gray: #f8f9fa;
+            --text-gray: #666;
+            --dark-gray: #333;
+            --white: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+            
+            /* Typography */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            --light-gray: #1a1a1a;
+            --lighter-gray: #2d2d2d;
+            --white: #242424;
+            --dark-gray: #e5e5e5;
+            --text-gray: #b0b0b0;
+            --shadow: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm) 0;
+        }
+
+        .logo {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .dark-mode-toggle {
+            background: var(--accent-blue);
+            color: var(--white);
+            border: none;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-size: var(--font-size-sm);
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            min-height: calc(100vh - 120px);
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: 0 4px 20px var(--shadow);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-dark), var(--accent-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-md);
+            color: var(--white);
+            font-size: var(--font-size-4xl);
+            font-weight: 600;
+        }
+
+        .contact-info {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-xs);
+            font-size: var(--font-size-sm);
+            color: var(--text-gray);
+        }
+
+        .contact-item i {
+            width: 20px;
+            color: var(--accent-blue);
+            margin-right: var(--spacing-xs);
+        }
+
+        .contact-item a {
+            color: var(--text-gray);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-blue);
+        }
+
+        .skills-section h3 {
+            color: var(--primary-dark);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-sm);
+            font-weight: 600;
+        }
+
+        .skill-category {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .skill-category h4 {
+            font-size: var(--font-size-sm);
+            color: var(--dark-gray);
+            margin-bottom: var(--spacing-xs);
+            font-weight: 500;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+        }
+
+        .skill-tag {
+            background: var(--lighter-gray);
+            color: var(--text-gray);
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+        }
+
+        .stats {
+            margin-top: var(--spacing-lg);
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid var(--lighter-gray);
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-xs);
+            font-size: var(--font-size-sm);
+        }
+
+        .stat-value {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xl);
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
+            color: var(--white);
+            padding: var(--spacing-2xl) var(--spacing-lg);
+        }
+
+        .hero h1 {
+            font-size: var(--font-size-4xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .hero .role {
+            font-size: var(--font-size-xl);
+            color: var(--accent-blue);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero .tagline {
+            font-size: var(--font-size-lg);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: 2px solid transparent;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: var(--font-size-base);
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border-color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Section Headers */
+        .section-header {
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: var(--font-size-3xl);
+            color: var(--primary-dark);
+            margin-bottom: var(--spacing-sm);
+            font-weight: 600;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            font-size: var(--font-size-lg);
+        }
+
+        /* About Section */
+        .about-content {
+            font-size: var(--font-size-lg);
+            line-height: 1.8;
+            color: var(--text-gray);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .project-card {
+            background: var(--lighter-gray);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px var(--shadow);
+            border-color: var(--accent-blue);
+        }
+
+        .project-card h3 {
+            color: var(--primary-dark);
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--spacing-sm);
+            font-weight: 600;
+        }
+
+        .project-description {
+            color: var(--text-gray);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.6;
+        }
+
+        .project-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .tool-tag {
+            background: var(--accent-blue);
+            color: var(--white);
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            background: var(--primary-dark);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-sm);
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Resume Section */
+        .resume-highlight {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .resume-block {
+            background: var(--lighter-gray);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+        }
+
+        .resume-block h3 {
+            color: var(--primary-dark);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-sm);
+            font-weight: 600;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .experience-item:last-child, .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .item-company, .item-school {
+            color: var(--accent-blue);
+            font-weight: 500;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .item-date {
+            color: var(--text-gray);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .item-description {
+            color: var(--text-gray);
+            font-size: var(--font-size-sm);
+            line-height: 1.5;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: var(--spacing-sm);
+            border: 2px solid var(--lighter-gray);
+            border-radius: var(--radius-md);
+            font-family: var(--font-family);
+            font-size: var(--font-size-base);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+        }
+
+        .btn-submit {
+            background: var(--primary-dark);
+            color: var(--white);
+            border: none;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background: var(--accent-blue);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: var(--spacing-lg) 0;
+            margin-top: var(--spacing-2xl);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+
+            .sidebar {
+                position: static;
+                order: 2;
+            }
+
+            .main-content {
+                order: 1;
+            }
+
+            .hero h1 {
+                font-size: var(--font-size-3xl);
+            }
+
+            .hero .tagline {
+                font-size: var(--font-size-base);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resume-highlight {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 var(--spacing-xs);
+            }
+
+            .content-section {
+                padding: var(--spacing-md);
+            }
+
+            .sidebar {
+                padding: var(--spacing-md);
+            }
+
+            .hero {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+
+            .header,
+            .dark-mode-toggle,
+            .contact-form,
+            footer {
+                display: none;
+            }
+
+            .main-layout {
+                grid-template-columns: 250px 1fr;
+                gap: 1rem;
+                margin: 0;
+            }
+
+            .content-section,
+            .sidebar {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+
+            .hero {
+                background: none;
+                color: black;
+                padding: 1rem;
+            }
+
+            .cta-buttons {
+                display: none;
+            }
+
+            .project-links {
+                display: none;
+            }
+
+            a {
+                color: black;
+                text-decoration: underline;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Lazy Loading */
+        img[data-src] {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        img[data-src].loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">FH</a>
+                <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+                    <i class="fas fa-moon"></i> Dark Mode
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="profile-photo">
+                    FH
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Karachi, Pakistan</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+923402643961">+92 3402643961</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:faisalharoon1994@gmail.com">faisalharoon1994@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/faisal-haroon-b4ba9b1b6/" target="_blank">LinkedIn Profile</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/Fais-123" target="_blank">GitHub Profile</a>
+                    </div>
+                </div>
+
+                <div class="skills-section">
+                    <h3>Technical Skills</h3>
+                    
+                    <div class="skill-category">
+                        <h4>Programming</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SQL</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Data Analysis</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Excel</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Visualization</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Matplotlib</span>
+                            <span class="skill-tag">Seaborn</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Specializations</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">EDA</span>
+                            <span class="skill-tag">Predictive Analysis</span>
+                            <span class="skill-tag">Data Preprocessing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <span>Projects Completed</span>
+                        <span class="stat-value">15+</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>Experience</span>
+                        <span class="stat-value">2+ Years</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>Languages</span>
+                        <span class="stat-value">English, Urdu</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Hero Section -->
+                <section class="hero content-section fade-in" id="hero">
+                    <h1>Faisal Haroon</h1>
+                    <div class="role">Data Analyst</div>
+                    <p class="tagline">
+                        Transforming raw data into actionable business insights using Python, SQL, and advanced analytics. 
+                        Passionate about solving real-world problems and driving organizational growth through data-driven decisions.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-primary" onclick="downloadResume()">
+                            <i class="fas fa-download"></i>
+                            Download Resume
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            Contact Me
+                        </a>
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section class="content-section fade-in" id="about">
+                    <div class="section-header">
+                        <h2>About Me</h2>
+                        <p>Data-driven professional with a passion for insights</p>
+                    </div>
+                    <div class="about-content">
+                        <p>
+                            As a dedicated Data Analyst with a Bachelor's in Software Engineering from the University of Karachi, 
+                            I specialize in leveraging Python, SQL, and cutting-edge data visualization tools to transform complex 
+                            datasets into clear, actionable business insights. My experience spans predictive modeling, automated 
+                            reporting systems, and ERP module development, with a proven track record of enhancing organizational 
+                            efficiency through data-driven solutions.
+                        </p>
+                        <br>
+                        <p>
+                            I bring a unique combination of technical expertise and business acumen, having worked on projects 
+                            ranging from emergency services optimization to employee analytics. My goal is to help organizations 
+                            make smarter decisions by uncovering patterns and trends that drive growth and operational excellence.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                <section class="content-section fade-in" id="projects">
+                    <div class="section-header">
+                        <h2>Featured Projects</h2>
+                        <p>Real-world data solutions and analytical insights</p>
+                    </div>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>Employee Salary Analysis</h3>
+                            <p class="project-description">
+                                Comprehensive analysis of employee salary patterns, trends, and insights using Python libraries. 
+                                Identified key factors affecting compensation and provided recommendations for HR optimization.
+                            </p>
+                            <div class="project-tools">
+                                <span class="tool-tag">Python</span>
+                                <span class="tool-tag">Pandas</span>
+                                <span class="tool-tag">Matplotlib</span>
+                                <span class="tool-tag">Seaborn</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Fais-123/firstgithub/blob/767eb6d3f2bf71268998101a1587cc561a23faa9/01_SF_Salaries_Exercise_Practice.ipynb" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    GitHub
+                                </a>
+                                
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>911 Calls Capstone – Python</h3>
+                            <p class="project-description">
+                                Analyzed emergency call patterns and extracted insights for public safety
+ improvements.
+                            </p>
+                            <div class="project-tools">
+                                <span class="tool-tag">Python</span>
+                                <span class="tool-tag">Pandas</span>
+                                <span class="tool-tag">Data Cleaning</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Fais-123/firstgithub/blob/930450b16d5de9fd3d1917217956bfbc9d4c985d/911_Calling_Project_Practice_IPY%20(1).ipynb" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    GitHub
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+<!-- Case Study Section -->
+<section class="content-section fade-in" id="case-study">
+    <div class="section-header">
+        <h2>Case Study: Employee Salary Analysis</h2>
+        <p>Deep dive into data-driven HR insights</p>
+    </div>
+    
+    <div class="case-study-content">
+        <h3>Problem Statement</h3>
+        <p class="project-description">
+            A mid-sized company wanted to analyze salary distribution across departments to ensure fair pay, 
+            identify potential gaps, and design a data-driven compensation strategy. The challenge was to process 
+            large employee datasets and provide actionable insights for HR decision-making.
+        </p>
+
+        <h3>Dataset & Approach</h3>
+        <div class="resume-highlight">
+            <div class="resume-block">
+                <h4>Data Overview</h4>
+                <ul style="margin-top: 10px; color: var(--text-gray);">
+                    <li>5,000+ employee records</li>
+                    <li>15 variables including salary, department, job role, and experience</li>
+                    <li>3 years of historical data</li>
+                    <li>Data collected from multiple HR sources</li>
+                </ul>
+            </div>
+            <div class="resume-block">
+                <h4>Methodology</h4>
+                <ul style="margin-top: 10px; color: var(--text-gray);">
+                    <li>Data cleaning (handling missing values, outliers, duplicates)</li>
+                    <li>Exploratory Data Analysis (EDA) with visualizations</li>
+                    <li>Statistical analysis & salary benchmarking</li>
+                    <li>Correlation study between salary, experience, and department</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Key Findings & Insights</h3>
+        <p class="project-description">
+            The analysis uncovered several critical insights:
+        </p>
+        <ul style="margin: 15px 0; color: var(--text-gray); line-height: 1.6;">
+            <li> Employees in the IT and Finance departments earned on average <b>15% higher salaries</b> compared to similar roles in HR and Operations.</li>
+            <li> A strong positive correlation was observed between <b>experience and compensation</b>, but salary growth plateaued after 12 years of service.</li>
+            <li> Gender-based pay disparity was minimal overall, but certain departments showed a <b>5–7% gap</b> that required HR review.</li>
+            <li> Several high-performing employees were identified as <b>underpaid compared to industry benchmarks</b>, signaling retention risks.</li>
+        </ul>
+
+        <p class="project-description">
+            These insights guided HR to restructure salary bands, leading to a more equitable compensation strategy. 
+            The company implemented adjustments that improved employee satisfaction and reduced turnover risk.
+        </p>
+
+        <div class="project-links" style="margin-top: 20px;">
+       
+            <a href="https://github.com/Fais-123" class="project-link" target="_blank">
+                <i class="fab fa-github"></i>
+                View Code
+            </a>
+        </div>
+    </div>
+</section>
+
+
+                <!-- Resume Section -->
+                <section class="content-section fade-in" id="resume">
+                    <div class="section-header">
+                        <h2>Professional Experience</h2>
+                        <p>Building expertise through hands-on experience</p>
+                    </div>
+
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <a href="#" class="btn btn-primary" onclick="downloadResume()">
+                            <i class="fas fa-download"></i>
+                            Download Complete Resume (PDF)
+                        </a>
+                    </div>
+
+                    <div class="resume-highlight">
+                        <div class="resume-block">
+                            <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
+                            
+                            <div class="experience-item">
+                                <div class="item-title">Backend Intern</div>
+                                <div class="item-company">Softech Solutions</div>
+                                <div class="item-date">January 2024 – March 2024</div>
+                                <div class="item-description">
+                                    • Worked on pre-built backend solutions and system integrations<br>
+                                    • Successfully integrated SendGrid API for automated customer notifications<br>
+                                    • Improved system efficiency and customer communication workflows
+                                </div>
+                            </div>
+
+                            <div class="experience-item">
+                                <div class="item-title">Python Intern</div>
+                                <div class="item-company">Odolution</div>
+                                <div class="item-date">December 2022 – January 2023</div>
+                                <div class="item-description">
+                                    • Developed automated PDF report generation system using Python & XML<br>
+                                    • Collaborated on ODOO ERP modules design & implementation<br>
+                                    • Enhanced ERP functionality through custom module development
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="resume-block">
+                            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                            
+                            <div class="education-item">
+                                <div class="item-title">Bachelor's in Software Engineering</div>
+                                <div class="item-school">University of Karachi (UBIT)</div>
+                                <div class="item-date">2019 – 2023</div>
+                                <div class="item-description">
+                                    Comprehensive program covering software development, data structures, 
+                                    algorithms, and database management. Specialized in data analysis and 
+                                    business intelligence applications.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ATS-Friendly Summary -->
+                    <div class="resume-block" style="margin-top: 30px; background: var(--lighter-gray); padding: 20px; border-radius: var(--radius-md);">
+                        <h3>ATS-Friendly Summary</h3>
+                        <p style="color: var(--text-gray); line-height: 1.6;">
+                            Data Analyst with Bachelor's in Software Engineering and 2+ years of experience in Python, SQL, 
+                            data visualization, and predictive analytics. Expertise in Pandas, NumPy, Power BI, and advanced 
+                            Excel. Proven track record in backend development, ERP systems, and automated reporting. Strong 
+                            problem-solving skills with experience in statistical analysis, data preprocessing, and business 
+                            intelligence. Available for remote internships and junior data analyst positions.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section class="content-section fade-in" id="contact">
+                    <div class="section-header">
+                        <h2>Get In Touch</h2>
+                        <p>Let's discuss how I can help with your data analysis needs</p>
+                    </div>
+
+                    <form class="contact-form" action="https://formspree.io/f/xpzvgqnw" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company/Organization</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="job-opportunity">Job Opportunity</option>
+                                <option value="internship">Internship</option>
+                                <option value="freelance">Freelance Project</option>
+                                <option value="collaboration">Collaboration</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required placeholder="Please describe your project or opportunity..."></textarea>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="remote" name="remote" value="yes">
+                            <label for="remote">I'm interested in remote internships & junior data analyst roles</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Faisal Haroon. All rights reserved. | Built with passion for data and insights.</p>
+            <p style="margin-top: 10px; font-size: 14px; opacity: 0.8;">
+                <a href="mailto:faisalharoon1994@gmail.com" style="color: #3498db; text-decoration: none;">faisalharoon1994@gmail.com</a> | 
+                <a href="https://www.linkedin.com/in/faisal-haroon-b4ba9b1b6/" style="color: #3498db; text-decoration: none;" target="_blank">LinkedIn</a> | 
+                <a href="https://github.com/Fais-123" style="color: #3498db; text-decoration: none;" target="_blank">GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDark);
+            
+            const toggle = document.querySelector('.dark-mode-toggle');
+            if (isDark) {
+                toggle.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+            } else {
+                toggle.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+            }
+        }
+
+        // Load dark mode preference
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('darkMode');
+            if (savedTheme === 'true') {
+                document.body.classList.add('dark-mode');
+                document.querySelector('.dark-mode-toggle').innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+            }
+
+            // Lazy load images
+            const images = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        img.classList.add('loaded');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+
+            // Animate elements on scroll
+            const animateElements = document.querySelectorAll('.fade-in');
+            const elementObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease-out';
+                elementObserver.observe(el);
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Download Resume Function
+    
+function downloadResume() {
+    // Replace this with the relative path of your PDF file in the project folder
+    const resumeUrl = "assets/Faisal_Haroon_Resume.pdf"; 
+
+    // Create a temporary anchor element
+    const link = document.createElement("a");
+    link.href = resumeUrl;
+    link.download = "Faisal_Haroon_Resume.pdf"; // file name when downloaded
+    document.body.appendChild(link);
+
+    // Trigger the click
+    link.click();
+
+    // Remove element
+    document.body.removeChild(link);
+}
+
+
+
+        // Form Submission Handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.contact-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    // Add loading state
+                    const submitBtn = form.querySelector('.btn-submit');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                    submitBtn.disabled = true;
+
+                    // Re-enable button after 3 seconds (for demo purposes)
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }, 3000);
+                });
+            }
+        });
+
+        // Add typing effect to hero tagline
+        function typeWriter(element, text, speed = 50) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effect when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const tagline = document.querySelector('.hero .tagline');
+            if (tagline) {
+                const originalText = tagline.textContent;
+                // Small delay before starting the typing effect
+                setTimeout(() => {
+                    typeWriter(tagline, originalText, 30);
+                }, 1000);
+            }
+        });
+
+        // Add scroll-to-top functionality
+        const scrollButton = document.createElement('button');
+        scrollButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        scrollButton.className = 'scroll-to-top';
+        scrollButton.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            display: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(52, 152, 219, 0.3);
+        `;
+
+        document.body.appendChild(scrollButton);
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollButton.style.display = 'block';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        });
+
+        scrollButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Add hover effects to project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Google Analytics (placeholder - replace with your tracking ID)
+        // gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <!-- Google Analytics (Optional - replace with your tracking ID) -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    -->
+</body>
+</html>
+                                    <!-- <i class="fas fa-eye"></i>
+                                    Live Demo
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Product Recommender System</h3>
+                            <p class="project-description">
+                                Developed an intelligent product recommendation system using the Apriori Algorithm. 
+                                Improved customer engagement and sales through personalized product suggestions.
+                            </p>
+                            <div class="project-tools">
+                                <span class="tool-tag">Python</span>
+                                <span class="tool-tag">Machine Learning</span>
+                                <span class="tool-tag">Apriori Algorithm</span>
+                                <span class="tool-tag">Data Mining</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Fais-123" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    GitHub
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-file-pdf"></i>
+                                    Report
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>911 Emergency Calls Analysis</h3>
+                            <p class="project-description">
+                                Analyzed emergency call patterns and extracted actionable insights for public safety improvements. 
+                                Created visualizations showing peak times, call types, and geographic distributions.
+                            </p>
+                            <div class="project-tools">
+                                <span class="tool-tag">Python</span>
+                                <span class="tool-tag">Data Visualization</span>
+                                <span class="tool-tag">Geographic Analysis</span>
+                                <span class="tool-tag">Time Series</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Fais-123" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    GitHub
+                                </a>
+                                <a href="#" class="project-link"> -->
